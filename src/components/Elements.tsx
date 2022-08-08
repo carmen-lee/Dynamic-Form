@@ -1,7 +1,10 @@
 import React, { ReactElement } from "react";
+import { makeStyles } from "@material-ui/core";
+
+import Dropdown from "./Dropdown";
 
 const Element: React.FC<ElementProps> = ({
-    // useStyles = makeStyles({}),
+    useStyles = makeStyles({}),
     fields: {
         fieldKey,
         fieldPrompt,
@@ -9,7 +12,7 @@ const Element: React.FC<ElementProps> = ({
         fieldPlaceholder,
         fieldType,
         fieldValue,
-        fieldOption,
+        fieldOptions,
     },
     handleChange,
 }): ReactElement => {
@@ -18,14 +21,20 @@ const Element: React.FC<ElementProps> = ({
             return (
                 <div>
                     datepicker
-                </div>
+                </div> 
             )
 
         case "dropdown":
             return (
-                <div>
-                    dropdown
-                </div>
+                
+                <Dropdown
+                useStyles={useStyles}
+                fieldKey={fieldKey}
+                fieldMandatory={fieldMandatory}
+                fieldPrompt={fieldPrompt}
+                fieldOptions={fieldOptions}
+                handleChange={handleChange}
+            />
             )
 
         case "input":
@@ -59,6 +68,7 @@ const Element: React.FC<ElementProps> = ({
 };
 
 interface ElementProps {
+    useStyles: any;
     handleChange: (e: React.ChangeEvent, id: string, value: any) => void;
     fields: {
         fieldKey?: string;
@@ -67,12 +77,12 @@ interface ElementProps {
         fieldPlaceholder?: string;
         fieldType?: string;
         fieldValue?: string;
-        fieldOption?: OptionList[];
+        fieldOptions?: OptionList[];
     };
 }
 
 interface OptionList {
-    optionLabel?: string;
+    optionLabel: string;
 }
 
 export default Element;

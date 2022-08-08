@@ -38,7 +38,7 @@ const Form: React.FC<Props> = ({
 		<div className={classes?.formContainer}>
 			<header>{formName}</header>
 			<form>
-				{ fields ? fields.map ( (field,i) => <Element key={i}  fields={field} handleChange={handleChange} />) : null }
+				{ fields ? fields.map ( (field,i) => <Element key={i}  fields={field} handleChange={handleChange} useStyles={useStyles}/>) : null }
 			</form>
 			<button onClick={(e) => handleSubmit(e)}>Submit</button>
 		</div>
@@ -63,11 +63,11 @@ interface FormFields {
 	fieldPlaceholder?: string;
 	fieldType?: string;
 	fieldValue?: string;
-	fieldOption?: OptionList[];
+	fieldOptions?: OptionList[];
 }
 
 interface OptionList {
-	optionLabel?: string;
+	optionLabel: string;
 }
 
 export default Form;
