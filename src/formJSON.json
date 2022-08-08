@@ -1,0 +1,72 @@
+[
+    {
+        "formName": "Personality Quiz",
+        "fields": [
+            {
+                "fieldKey": "name",
+                "fieldPrompt": "What is your name?",
+                "fieldMandatory": "no",
+                "fieldPlaceholder": "Full Name",
+                "fieldType": "input",
+                "fieldValue": ""
+            },
+            {
+                "fieldKey": "favColor",
+                "fieldPrompt": "Favorite Color?",
+                "fieldMandatory": "no",
+                "fieldType": "dropdown",
+                "fieldValue": "",
+                "fieldOptions": [
+                    {
+                        "optionLabel": "--Select--"
+                    },
+                    {
+                        "optionLabel": "yellow"
+                    },
+                    {
+                        "optionLabel": "red"
+                    },
+                    {
+                        "optionLabel": "blue"
+                    }
+                ]
+            },
+            {
+                "fieldKey": "age",
+                "fieldPrompt": "age?",
+                "fieldMandatory": "no",
+                "fieldType": "datepicker",
+                "fieldValue": ""
+            },
+            {
+                "fieldKey": "favNum",
+                "fieldPrompt": "Favorite Number?",
+                "fieldMandatory": "no",
+                "fieldType": "radio",
+                "fieldValue": "",
+                "fieldOptions": [
+                    {
+                        "optionLabel": "--Select--"
+                    },
+                    {
+                        "optionLabel": "1"
+                    },
+                    {
+                        "optionLabel": "2"
+                    },
+                    {
+                        "optionLabel": "3"
+                    }
+                ]
+            },
+            {
+                "fieldKey": "funFact",
+                "fieldPrompt": "Fun Face About Yourself",
+                "fieldMandatory": "no",
+                "fieldPlaceholder": "Type Here",
+                "fieldType": "textarea",
+                "fieldValue": ""
+            }
+        ]
+    }
+]
