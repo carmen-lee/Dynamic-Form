@@ -1,8 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './index.css';
 import App from './Form';
+import { createRoot } from 'react-dom/client';
 import { makeStyles } from "@material-ui/core";
+
 
 const useStyles = makeStyles({
     formContainer: {
@@ -20,5 +21,8 @@ const useStyles = makeStyles({
     }
 })
 
-ReactDOM.render(<App props={{useStyles}}/>, document.getElementById('root'));
+// ReactDOM.render(<App props={{useStyles}}/>, document.getElementById('root'));
 
+const container = document.getElementById('root');
+const root = createRoot(container!); // createRoot(container!) if you use TypeScript
+root.render(<App props={{useStyles}} />);
