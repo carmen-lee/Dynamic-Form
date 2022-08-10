@@ -4,99 +4,56 @@ import { makeStyles } from "@material-ui/core";
 import Dropdown from "./Dropdown";
 import Datepicker from "./Datepicker";
 import Input from "./Input";
+import Radio from "./Radio";
+import TextArea from "./TextArea";
 
 const Element: React.FC<ElementProps> = ({
     useStyles = makeStyles({}),
-    fields: {
-        fieldKey,
-        fieldPrompt,
-        fieldMandatory,
-        fieldPlaceholder,
-        fieldType,
-        fieldValue,
-        fieldOptions,
-    },
+    fields,
     handleChange,
-}): ReactElement => {
-    switch (fieldType) {
+}: ElementProps): ReactElement => {
+
+    const componentProps = {
+        fieldKey: fields.fieldKey,
+        fieldPrompt: fields.fieldPrompt,
+        fieldMandatory: fields.fieldMandatory,
+        fieldPlaceholder: fields.fieldPlaceholder,
+        fieldType: fields.fieldType,
+        fieldValue: fields.fieldValue,
+        fieldOptions: fields.fieldOptions,
+        useStyles: useStyles,
+        handleChange: handleChange,
+    }
+
+    switch (fields.fieldType) {
         case "datepicker":
             return (
-                <Datepicker
-                    useStyles={useStyles}
-                    fieldKey={fieldKey}
-                    fieldMandatory={fieldMandatory}
-                    fieldPrompt={fieldPrompt}
-                    handleChange={handleChange}
-                />
+                <Datepicker props={componentProps}/>
             )
 
         case "dropdown":
             return (
-                <Dropdown
-                    useStyles={useStyles}
-                    fieldKey={fieldKey}
-                    fieldMandatory={fieldMandatory}
-                    fieldPrompt={fieldPrompt}
-                    fieldOptions={fieldOptions}
-                    handleChange={handleChange}
-                />
+                <Dropdown props={componentProps}/>
             )
 
         case "input":
             return (
-                <Input
-                    useStyles={useStyles}
-                    fieldKey={fieldKey}
-                    fieldMandatory={fieldMandatory}
-                    fieldPrompt={fieldPrompt}
-                    fieldPlaceholder={fieldPlaceholder}
-                    handleChange={handleChange}
-                />
+                <Input props={componentProps}/>
             )
 
         case "radio":
             return (
-                <div>
-                    radio
-                </div>
-                // <Dropdown
-                //     useStyles={useStyles}
-                //     fieldKey={fieldKey}
-                //     fieldMandatory={fieldMandatory}
-                //     fieldPrompt={fieldPrompt}
-                //     fieldOptions={fieldOptions}
-                //     handleChange={handleChange}
-                // />
+                <Radio props={componentProps}/>
             )
 
         case "textarea":
             return (
-                <div>
-                    textarea
-                </div>
-                // <Dropdown
-                //     useStyles={useStyles}
-                //     fieldKey={fieldKey}
-                //     fieldMandatory={fieldMandatory}
-                //     fieldPrompt={fieldPrompt}
-                //     fieldPlaceholder={fieldPlaceholder}
-                //     handleChange={handleChange}
-                // />
+                <TextArea props={componentProps}/>
             )
 
         default:
             return (
-                <div>
-                    default
-                </div>
-                // <Dropdown
-                //     useStyles={useStyles}
-                //     fieldKey={fieldKey}
-                //     fieldMandatory={fieldMandatory}
-                //     fieldPrompt={fieldPrompt}
-                //     fieldOptions={fieldOptions}
-                //     handleChange={handleChange}
-                // />
+                <></>
             )
     }
 };

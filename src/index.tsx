@@ -21,8 +21,6 @@ const useStyles = makeStyles({
     }
 })
 
-// ReactDOM.render(<App props={{useStyles}}/>, document.getElementById('root'));
-
 const container = document.getElementById('root');
 const root = createRoot(container!); // createRoot(container!) if you use TypeScript
 root.render(<App props={{useStyles}} />);

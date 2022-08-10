@@ -7,7 +7,7 @@ const Form: React.FC<Props> = ({
 	props: {
 		useStyles = makeStyles({})
 	}
-}): ReactElement => {
+}: Props): ReactElement => {
 	const [elements, setElements] = useState<FormProps>({});
 
 	const classes = useStyles();
