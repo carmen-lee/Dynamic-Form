@@ -1,8 +1,8 @@
 Check out my blogpost on this project: <a href="">React Dynamic Form</a>
 
 
-# Dynamic Form
-Created with React
+# Form Creator
+Built with React
 
 A form generated from a template you specify!
 
