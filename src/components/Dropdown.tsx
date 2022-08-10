@@ -2,12 +2,14 @@ import React, { ReactElement } from "react";
 import { makeStyles } from "@material-ui/core";
 
 const Dropdown: React.FC<DropdownProps> = ({
-    useStyles = makeStyles({}),
-    fieldKey,
-    fieldMandatory,
-    fieldPrompt,
-    fieldOptions,
-    handleChange
+    props: {
+        useStyles = makeStyles({}),
+        fieldKey,
+        fieldMandatory,
+        fieldPrompt,
+        fieldOptions,
+        handleChange
+    }
 }: DropdownProps): ReactElement => {
     const classes = useStyles();
     return (
@@ -25,12 +27,14 @@ const Dropdown: React.FC<DropdownProps> = ({
 }
 
 interface DropdownProps {
-    useStyles?: any;
-    fieldKey: string;
-    fieldMandatory: string;
-    fieldPrompt: string;
-    fieldOptions: OptionList[];
-    handleChange: (e: React.ChangeEvent<HTMLSelectElement>, id: string, value:any) => void;
+    props: {
+        useStyles?: any;
+        fieldKey: string;
+        fieldMandatory: string;
+        fieldPrompt: string;
+        fieldOptions: OptionList[];
+        handleChange: (e: React.ChangeEvent<HTMLSelectElement>, id: string, value:any) => void;
+    };
 }
 
 interface OptionList {

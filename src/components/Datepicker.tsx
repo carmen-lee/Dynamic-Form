@@ -2,11 +2,13 @@ import React, { ReactElement } from "react";
 import { makeStyles } from "@material-ui/core";
 
 const Datepicker: React.FC<DatepickerProps> = ({
-    useStyles = makeStyles({}),
-    fieldKey,
-    fieldMandatory,
-    fieldPrompt,
-    handleChange
+    props: {
+        useStyles = makeStyles({}),
+        fieldKey,
+        fieldMandatory,
+        fieldPrompt,
+        handleChange
+    }
 }: DatepickerProps): ReactElement => {
     const classes = useStyles();
     return (
@@ -18,11 +20,13 @@ const Datepicker: React.FC<DatepickerProps> = ({
 }
 
 interface DatepickerProps {
-    useStyles?: any;
-    fieldKey: string;
-    fieldMandatory: string;
-    fieldPrompt: string;
-    handleChange: (e: React.ChangeEvent<HTMLSelectElement>, id: string, value:any) => void;
+    props: {
+        useStyles?: any;
+        fieldKey: string;
+        fieldMandatory: string;
+        fieldPrompt: string;
+        handleChange: (e: React.ChangeEvent<HTMLSelectElement>, id: string, value:any) => void;
+    };
 }
 
 interface OptionList {
