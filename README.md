@@ -1,4 +1,4 @@
-Check out my blogpost on this project: <a href="">React Dynamic Form</a>
+Check out my blogpost on this project: <a href="">Form Creator</a>
 
 
 # Form Creator
