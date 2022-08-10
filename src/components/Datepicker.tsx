@@ -12,9 +12,9 @@ const Datepicker: React.FC<DatepickerProps> = ({
 }: DatepickerProps): ReactElement => {
     const classes = useStyles();
     return (
-        <div>
+        <div className="form--field">
             <label>{fieldPrompt}</label>
-            <input type="date"></input>
+            <input type="date" onChange={(e) => handleChange(e, fieldKey, e.target.value)}></input>
         </div>
     )
 }
@@ -25,12 +25,8 @@ interface DatepickerProps {
         fieldKey: string;
         fieldMandatory: string;
         fieldPrompt: string;
-        handleChange: (e: React.ChangeEvent<HTMLSelectElement>, id: string, value:any) => void;
+        handleChange: (e: React.ChangeEvent<HTMLInputElement>, id: string, value:any) => void;
     };
-}
-
-interface OptionList {
-    optionLabel: string;
 }
 
 export default Datepicker

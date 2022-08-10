@@ -13,15 +13,21 @@ const Radio: React.FC<RadioProps> = ({
 }: RadioProps): ReactElement => {
     const classes = useStyles();
     return (
-        <div>
+        <div className="form--field">
             <label>{fieldPrompt}</label>
-            <select
-                onChange={(e) => handleChange(e, fieldKey, e.target.value)}
-            >
-                {fieldOptions && fieldOptions.map((option:any, i: number) =>
-                    <option key={i} value={option.optionLabel}>{option.optionLabel}</option>
-                )}
-            </select>
+            <div>
+                {fieldOptions && fieldOptions.map((option, i) => (
+                    <div key={i}>
+                        <input
+                            type="radio"
+                            name={fieldKey}
+                            value={option.optionLabel}
+                            onChange={(e) => handleChange(e, fieldKey, e.target.value)}
+                        />
+                        <label>{option.optionLabel}</label>
+                    </div>
+                ))}
+            </div>
         </div>
     )
 }
@@ -33,7 +39,7 @@ interface RadioProps {
         fieldMandatory: string;
         fieldPrompt: string;
         fieldOptions: OptionList[];
-        handleChange: (e: React.ChangeEvent<HTMLSelectElement>, id: string, value:any) => void;
+        handleChange: (e: React.ChangeEvent<HTMLInputElement>, id: string, value:any) => void;
     };
 }
 

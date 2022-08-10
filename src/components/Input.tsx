@@ -13,9 +13,9 @@ const Input: React.FC<InputProps> = ({
 }: InputProps): ReactElement => {
     const classes = useStyles();
     return (
-        <div>
+        <div className="form--field">
             <label>{fieldPrompt}</label>
-            <input type="input" placeholder={fieldPlaceholder}></input>
+            <input type="input" placeholder={fieldPlaceholder} onChange={(e) => handleChange(e, fieldKey, e.target.value)}></input>
         </div>
     )
 }
@@ -27,12 +27,8 @@ interface InputProps {
         fieldMandatory: string;
         fieldPrompt: string;
         fieldPlaceholder: string;
-        handleChange: (e: React.ChangeEvent<HTMLSelectElement>, id: string, value:any) => void;
+        handleChange: (e: React.ChangeEvent<HTMLInputElement>, id: string, value:any) => void;
     };
-}
-
-interface OptionList {
-    optionLabel: string;
 }
 
 export default Input

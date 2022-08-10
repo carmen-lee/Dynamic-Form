@@ -9,7 +9,7 @@ const useStyles = makeStyles({
     formContainer: {
         border: "1px solid gray",
         height: "auto",
-        width: "800px",
+        width: "600px",
         marginLeft: "auto",
         marginRight: "auto",
         display: "flex",

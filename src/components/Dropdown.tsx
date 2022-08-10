@@ -13,7 +13,7 @@ const Dropdown: React.FC<DropdownProps> = ({
 }: DropdownProps): ReactElement => {
     const classes = useStyles();
     return (
-        <div>
+        <div className="form--field">
             <label>{fieldPrompt}</label>
             <select
                 onChange={(e) => handleChange(e, fieldKey, e.target.value)}

@@ -32,8 +32,8 @@
                 ]
             },
             {
-                "fieldKey": "age",
-                "fieldPrompt": "age?",
+                "fieldKey": "birthday",
+                "fieldPrompt": "Birthday?",
                 "fieldMandatory": "no",
                 "fieldType": "datepicker",
                 "fieldValue": ""
@@ -45,9 +45,6 @@
                 "fieldType": "radio",
                 "fieldValue": "",
                 "fieldOptions": [
-                    {
-                        "optionLabel": "--Select--"
-                    },
                     {
                         "optionLabel": "1"
                     },
@@ -61,7 +58,7 @@
             },
             {
                 "fieldKey": "funFact",
-                "fieldPrompt": "Fun Face About Yourself",
+                "fieldPrompt": "Fun Fact About Yourself",
                 "fieldMandatory": "no",
                 "fieldPlaceholder": "Type Here",
                 "fieldType": "textarea",

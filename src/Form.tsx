@@ -36,11 +36,13 @@ const Form: React.FC<Props> = ({
 
 	return (
 		<div className={classes?.formContainer}>
-			<header>{formName}</header>
-			<form>
-				{ fields ? fields.map ( (field,i) => <Element key={i}  fields={field} handleChange={handleChange} useStyles={useStyles}/>) : null }
-			</form>
-			<button onClick={(e) => handleSubmit(e)}>Submit</button>
+			<header className="form--heading">{formName}</header>
+			<div className="form--body">
+				<form className="">
+					{ fields ? fields.map ( (field,i) => <Element key={i} fields={field} handleChange={handleChange} useStyles={useStyles}/>) : null }
+				</form>
+			</div>
+			<button className="form--submit-button" onClick={(e) => handleSubmit(e)}>Submit</button>
 		</div>
 	);
 };
